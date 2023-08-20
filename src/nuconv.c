@@ -691,11 +691,11 @@ int nuconv_do_utoa(uint64_t target, char* buf, unsigned radix, int flags)
   char* low = buf;
   if ((flags & NUCONV_FLAG_UPPERCASE) != 0)
     do
-      *buf++ = nuconv_alphabetl[target % radix];
+      *buf++ = nuconv_alphabetu[target % radix];
     while (target /= radix);
   else
     do
-      *buf++ = nuconv_alphabetu[target % radix];
+      *buf++ = nuconv_alphabetl[target % radix];
   *buf++ = '\0';
   nuconv_strrev(low);
   return NUCONV_OK;
