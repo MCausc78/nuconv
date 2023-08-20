@@ -593,11 +593,11 @@ int nuconv_do_atoi(int64_t* dst, const char* target, unsigned radix, int flags)
       continue;
     }
     looped = true;
-    char* x = nuconv_strchr(nuconv_alphabetl, nuconv_toupper(c));
+    char* x = nuconv_strchr(nuconv_alphabetu, nuconv_toupper(c));
     if (x == NULL) {
       break;
     }
-    size_t pos = x - nuconv_alphabetl;
+    size_t pos = x - nuconv_alphabetu;
     if (pos >= radix) {
       break;
     }
@@ -634,11 +634,11 @@ int nuconv_do_atou(uint64_t* dst, const char* target, unsigned radix, int flags)
       continue;
     }
     looped = true;
-    char* x = nuconv_strchr(nuconv_alphabetl, nuconv_toupper(c));
+    char* x = nuconv_strchr(nuconv_alphabetu, nuconv_toupper(c));
     if (x == NULL) {
       break;
     }
-    size_t pos = x - nuconv_alphabetl;
+    size_t pos = x - nuconv_alphabetu;
     if (pos >= radix) {
       break;
     }
